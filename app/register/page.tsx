@@ -22,23 +22,11 @@ export default function Register() {
 
         <input
           type="text"
-          placeholder="Username"
+          placeholder="User ID"
           style={{
             width: "100%",
             padding: "14px",
             marginTop: "15px",
-            borderRadius: "10px",
-            border: "1px solid #334155"
-          }}
-        />
-
-        <input
-          type="email"
-          placeholder="Email"
-          style={{
-            width: "100%",
-            padding: "14px",
-            marginTop: "12px",
             borderRadius: "10px",
             border: "1px solid #334155"
           }}
