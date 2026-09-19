@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function HomePage() {
-  // Popup दिसावा की नाही यासाठी State (Default: true)
+  // Popup Window दाबावी/लपवावी यासाठी State
   const [showModal, setShowModal] = useState(true);
 
   return (
@@ -29,13 +29,15 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* ANNOUNCEMENT TICKER */}
-      <div className="bg-slate-900/90 border-b border-slate-800 py-1.5 px-4 text-xs text-amber-400 flex items-center gap-2">
+      {/* ANNOUNCEMENT TICKER (NO MARQUEE ERROR) */}
+      <div className="bg-slate-900/90 border-b border-slate-800 py-1.5 px-4 text-xs text-amber-400 flex items-center gap-2 overflow-hidden whitespace-nowrap">
         <span>📢</span>
-        <marquee className="font-medium">WELCOME TO BALAJIPLAY - VIRTUAL DEMO BETTING PLATFORM! FASTEST AUTOMATED SYSTEM.</marquee>
+        <div className="inline-block animate-pulse font-medium">
+          WELCOME TO BALAJIPLAY - VIRTUAL DEMO BETTING PLATFORM! FASTEST AUTOMATED SYSTEM.
+        </div>
       </div>
 
-      {/* BACKGROUND CONTENT (HOMEPAGE BANNER & GAMES) */}
+      {/* BACKGROUND CONTENT */}
       <main className="p-4 max-w-4xl mx-auto space-y-6">
         <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-900 to-slate-900 p-6 border border-slate-800 text-center">
           <h2 className="text-3xl font-extrabold text-amber-400 mb-2">PLAY. SPIN. HAVE FUN.</h2>
@@ -50,12 +52,12 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* 2. POPUP MODAL (11XPLAY STYLE) */}
+      {/* 2. POPUP MODAL */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-200">
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl relative">
             
-            {/* CLOSE BUTTON (X) */}
+            {/* CLOSE BUTTON */}
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-3 right-3 bg-white/20 hover:bg-white/40 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold z-20"
@@ -63,7 +65,7 @@ export default function HomePage() {
               ✕
             </button>
 
-            {/* POPUP HEADER - WARNING BANNER */}
+            {/* POPUP HEADER */}
             <div className="bg-slate-950 p-4 text-center border-b border-slate-800">
               <div className="inline-flex items-center gap-2 text-red-500 font-extrabold text-sm tracking-wide bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20 mb-1">
                 <span>⚠️</span> STOP RISKING!
