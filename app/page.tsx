@@ -4,19 +4,12 @@ export default function Home() {
   return (
     <main className="home">
       <nav className="navbar">
-        <div className="logo">
-          🎮 <span>BalajiPlay</span>
-        </div>
+        <div className="logo">🎮 BalajiPlay</div>
 
         <div className="navLinks">
           <a href="#games">Games</a>
-          <a href="#leaderboard">Leaderboard</a>
-
-          <Link className="loginBtn" href="/login">
-            Login
-          </Link>
-
-          <Link className="registerBtn" href="/register">
+          <Link href="/login">Login</Link>
+          <Link href="/register" className="registerBtn">
             Register
           </Link>
         </div>
@@ -24,7 +17,7 @@ export default function Home() {
 
       <section className="hero">
         <div className="heroContent">
-          <div className="badge">🔥 PREMIUM GAMING PLATFORM</div>
+          <div className="badge">🔥 PREMIUM GAMING</div>
 
           <h1>
             PLAY.
@@ -81,4 +74,56 @@ export default function Home() {
       </section>
 
       <section id="games" className="games">
-        <div
+        <div className="sectionTitle">
+          <small>DISCOVER</small>
+          <h2>Featured Games</h2>
+        </div>
+
+        <div className="gameGrid">
+          <div className="gameCard red">
+            <div className="gameIcon">⚔️</div>
+            <h3>Battle Arena</h3>
+            <p>Action Game</p>
+          </div>
+
+          <div className="gameCard blue">
+            <div className="gameIcon">🏎️</div>
+            <h3>Speed Racer</h3>
+            <p>Racing Game</p>
+          </div>
+
+          <div className="gameCard purple">
+            <div className="gameIcon">🧩</div>
+            <h3>Puzzle Rush</h3>
+            <p>Puzzle Game</p>
+          </div>
+
+          <div className="gameCard green">
+            <div className="gameIcon">🎯</div>
+            <h3>Target Master</h3>
+            <p>Skill Game</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="leaderboard" className="leaderboard">
+        <div className="sectionTitle">
+          <small>TOP PLAYERS</small>
+          <h2>Leaderboard</h2>
+        </div>
+
+        <div className="players">
+          <div>🥇 ShadowX <span>9,850 coins</span></div>
+          <div>🥈 Raider07 <span>8,920 coins</span></div>
+          <div>🥉 ProGamer <span>8,450 coins</span></div>
+        </div>
+      </section>
+
+      <footer>
+        <h2>🎮 BalajiPlay</h2>
+        <p>Play • Compete • Have Fun</p>
+        <small>© 2026 BalajiPlay</small>
+      </footer>
+    </main>
+  );
+}
