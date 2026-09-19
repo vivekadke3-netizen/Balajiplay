@@ -4,8 +4,8 @@ const games = [
   ["🎡", "Roulette", "CLASSIC"],
   ["🃏", "Teen Patti", "CARD GAME"],
   ["♠️", "Blackjack", "CARD GAME"],
-  ["🎰", "Slots", "ARCADE"],
   ["🎲", "Dice", "DICE"],
+  ["🎰", "Slots", "ARCADE"],
   ["🃏", "Andar Bahar", "CARD GAME"],
 ];
 
