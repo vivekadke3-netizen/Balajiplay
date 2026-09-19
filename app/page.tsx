@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const games = [
-  ["🎡", "Roulette", "CLASSIC"],
-  ["🃏", "Teen Patti", "CARD GAME"],
-  ["♠️", "Blackjack", "CARD GAME"],
-  ["🎲", "Dice", "DICE"],
-  ["🎰", "Slots", "ARCADE"],
-  ["🃏", "Andar Bahar", "CARD GAME"],
+  ["🎡", "Roulette", "CLASSIC", "/roulette"],
+  ["🃏", "Teen Patti", "CARD GAME", "#"],
+  ["♠️", "Blackjack", "CARD GAME", "#"],
+  ["🎲", "Dice", "DICE", "#"],
+  ["🎰", "Slots", "ARCADE", "#"],
+  ["🃏", "Andar Bahar", "CARD GAME", "#"],
 ];
 
 export default function Home() {
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
         <div className="gameGrid">
-          {games.map(([icon, name, type]) => (
+          {games.map(([icon, name, type, link]) => (
             <div className="gameCard" key={name}>
               <div className="gameIcon">{icon}</div>
 
@@ -77,7 +77,13 @@ export default function Home() {
                 <p>Play Demo</p>
               </div>
 
-              <button>PLAY DEMO</button>
+              {link === "#" ? (
+                <button type="button">COMING SOON</button>
+              ) : (
+                <Link href={link} className="primaryBtn">
+                  PLAY DEMO
+                </Link>
+              )}
             </div>
           ))}
         </div>
