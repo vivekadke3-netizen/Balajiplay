@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #05070d;
-  color: #fff;
+  color: white;
 }
 
 a {
@@ -21,29 +21,29 @@ a {
 .home {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 80% 10%, #18265c 0, transparent 30%),
-    radial-gradient(circle at 10% 40%, #102f2c 0, transparent 25%),
+    radial-gradient(circle at 80% 5%, #263b88 0, transparent 28%),
+    radial-gradient(circle at 10% 35%, #124d43 0, transparent 25%),
     #05070d;
 }
 
 /* NAVBAR */
 
 .navbar {
-  height: 72px;
+  height: 75px;
   padding: 0 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(7, 10, 18, 0.85);
-  border-bottom: 1px solid #20283a;
+  background: rgba(5, 8, 15, 0.82);
+  border-bottom: 1px solid #263044;
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(15px);
+  z-index: 20;
+  backdrop-filter: blur(18px);
 }
 
 .logo {
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 900;
 }
 
@@ -57,28 +57,27 @@ a {
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 24px;
-  font-size: 14px;
+  gap: 12px;
+}
+
+.navLinks a {
+  padding: 11px 16px;
+  border-radius: 10px;
   color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .navLinks a:hover {
-  color: #22c55e;
-}
-
-.registerBtn {
-  padding: 11px 18px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: white !important;
-  font-weight: 800;
+  color: white;
+  background: #111827;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 590px;
-  padding: 80px 7%;
+  min-height: 620px;
+  padding: 90px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,31 +86,253 @@ a {
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: #22c55e;
-  filter: blur(150px);
-  opacity: 0.12;
-  right: 5%;
-  top: 20%;
-}
-
 .heroContent {
-  max-width: 680px;
+  max-width: 700px;
   position: relative;
   z-index: 2;
 }
 
 .badge {
   display: inline-block;
-  padding: 9px 15px;
-  border: 1px solid #254d3b;
-  background: #0c1c17;
+  padding: 10px 16px;
+  border: 1px solid #25634a;
+  background: rgba(10, 35, 25, 0.7);
   color: #4ade80;
   border-radius: 30px;
   font-size: 12px;
   font-weight: 800;
- 
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 88px);
+  line-height: 0.92;
+  margin: 25px 0;
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 540px;
+  color: #94a3b8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 12px 40px rgba(34, 197, 94, 0.25);
+}
+
+.secondaryBtn {
+  border: 1px solid #334155;
+  background: rgba(13, 17, 27, 0.8);
+}
+
+/* COIN CARD */
+
+.heroCard {
+  width: 280px;
+  padding: 38px 25px;
+  text-align: center;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #151e31, #080c15);
+  border: 1px solid #334155;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+  transform: rotate(4deg);
+}
+
+.coin {
+  font-size: 70px;
+}
+
+.heroCard h3 {
+  margin: 10px 0;
+  color: #94a3b8;
+}
+
+.heroCard strong {
+  display: block;
+  font-size: 38px;
+  color: #facc15;
+  margin: 12px 0;
+}
+
+.heroCard p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* GAMES */
+
+.games {
+  padding: 85px 6%;
+}
+
+.sectionTitle {
+  margin-bottom: 32px;
+}
+
+.sectionTitle small {
+  color: #22c55e;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.sectionTitle h2 {
+  font-size: 36px;
+  margin: 8px 0;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.gameCard {
+  min-height: 230px;
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid #263248;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.gameCard:hover {
+  transform: translateY(-9px);
+  border-color: #22c55e;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.gameIcon {
+  font-size: 58px;
+}
+
+.gameCard small {
+  color: #94a3b8;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.gameCard h3 {
+  margin: 8px 0;
+  font-size: 22px;
+}
+
+.gameCard p {
+  margin: 0;
+  color: #64748b;
+}
+
+.red {
+  background: radial-gradient(circle at top right, #581b2a, #0c111b 65%);
+}
+
+.blue {
+  background: radial-gradient(circle at top right, #123e61, #0c111b 65%);
+}
+
+.purple {
+  background: radial-gradient(circle at top right, #432466, #0c111b 65%);
+}
+
+.green {
+  background: radial-gradient(circle at top right, #14563c, #0c111b 65%);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #20283a;
+}
+
+footer p {
+  color: #64748b;
+}
+
+footer small {
+  color: #475569;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .navLinks a:first-child {
+    display: none;
+  }
+
+  .hero {
+    padding: 65px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroButtons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .heroCard {
+    width: 240px;
+    transform: none;
+  }
+
+  .games {
+    padding: 60px 20px;
+  }
+
+  .gameGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .gameGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle h2 {
+    font-size: 28px;
+  }
+}
