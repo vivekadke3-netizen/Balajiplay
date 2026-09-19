@@ -7,16 +7,8 @@ export default function Home() {
         <div className="logo">🎮 <span>BalajiPlay</span></div>
 
         <div className="navLinks">
-          <a href="#games">Games</a>
-          <a href="#leaderboard">Leaderboard</a>
-
-          <Link className="loginBtn" href="/login">
-            Login
-          </Link>
-
-          <a href="#games" className="registerBtn">
-            Demo
-          </a>
+          <Link href="/login">Login</Link>
+          <a href="#games">Demo</a>
         </div>
       </nav>
 
@@ -33,13 +25,12 @@ export default function Home() {
           </h1>
 
           <p>
-            Explore exciting games, collect virtual coins and climb the
-            leaderboard.
+            Explore exciting games and play in Demo Mode with virtual coins.
           </p>
 
           <div className="heroButtons">
             <Link href="/login" className="primaryBtn">
-              LOGIN TO PLAY
+              LOGIN
             </Link>
 
             <a href="#games" className="secondaryBtn">
@@ -54,33 +45,60 @@ export default function Home() {
           <strong>10,000</strong>
           <p>Virtual Balance</p>
         </div>
-      </section>      <section className="stats">
-        <div>
-          <strong>25+</strong>
-          <span>Games</span>
-        </div>
-
-        <div>
-          <strong>10K+</strong>
-          <span>Players</span>
-        </div>
-
-        <div>
-          <strong>24/7</strong>
-          <span>Gaming</span>
-        </div>
-
-        <div>
-          <strong>100%</strong>
-          <span>Fun</span>
-        </div>
       </section>
 
       <section id="games" className="games">
         <div className="sectionTitle">
           <div>
-            <small>DISCOVER</small>
+            <small>DEMO MODE</small>
             <h2>Featured Games</h2>
           </div>
+        </div>
 
-         
+        <div className="gameGrid">
+          <div className="gameCard red">
+            <div className="gameIcon">⚔️</div>
+            <div>
+              <small>ACTION</small>
+              <h3>Battle Arena</h3>
+              <p>Demo Game</p>
+            </div>
+          </div>
+
+          <div className="gameCard blue">
+            <div className="gameIcon">🏎️</div>
+            <div>
+              <small>RACING</small>
+              <h3>Speed Racer</h3>
+              <p>Demo Game</p>
+            </div>
+          </div>
+
+          <div className="gameCard purple">
+            <div className="gameIcon">🧩</div>
+            <div>
+              <small>PUZZLE</small>
+              <h3>Puzzle Rush</h3>
+              <p>Demo Game</p>
+            </div>
+          </div>
+
+          <div className="gameCard green">
+            <div className="gameIcon">🎯</div>
+            <div>
+              <small>SKILL</small>
+              <h3>Target Master</h3>
+              <p>Demo Game</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <h2>🎮 BalajiPlay</h2>
+        <p>Play • Compete • Have Fun</p>
+        <small>© 2026 BalajiPlay</small>
+      </footer>
+    </main>
+  );
+}
