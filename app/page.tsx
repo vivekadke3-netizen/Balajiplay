@@ -1,31 +1,43 @@
 import Link from "next/link";
 
+const games = [
+  ["🎡", "Roulette", "CLASSIC"],
+  ["🃏", "Teen Patti", "CARD GAME"],
+  ["♠️", "Blackjack", "CARD GAME"],
+  ["🎰", "Slots", "ARCADE"],
+  ["🎲", "Dice", "DICE"],
+  ["🃏", "Andar Bahar", "CARD GAME"],
+];
+
 export default function Home() {
   return (
     <main className="home">
       <nav className="navbar">
-        <div className="logo">🎮 <span>BalajiPlay</span></div>
+        <div className="logo">
+          🎮 <span>BalajiPlay</span>
+        </div>
 
         <div className="navLinks">
+          <a href="#games">Games</a>
           <Link href="/login">Login</Link>
-          <a href="#games">Demo</a>
         </div>
       </nav>
 
       <section className="hero">
         <div className="heroContent">
-          <div className="badge">🔥 PREMIUM GAMING PLATFORM</div>
+          <div className="badge">🔥 PREMIUM DEMO PLATFORM</div>
 
           <h1>
             PLAY.
             <br />
-            <span>COMPETE.</span>
+            <span>SPIN.</span>
             <br />
             HAVE FUN.
           </h1>
 
           <p>
-            Explore exciting games and play in Demo Mode with virtual coins.
+            Explore classic casino-style games in a safe Demo Mode using
+            virtual coins only.
           </p>
 
           <div className="heroButtons">
@@ -34,70 +46,47 @@ export default function Home() {
             </Link>
 
             <a href="#games" className="secondaryBtn">
-              TRY DEMO
+              EXPLORE GAMES
             </a>
           </div>
         </div>
 
         <div className="heroCard">
           <div className="coin">🪙</div>
-          <h3>Demo Coins</h3>
+          <h3>Demo Balance</h3>
           <strong>10,000</strong>
-          <p>Virtual Balance</p>
+          <p>Virtual Coins</p>
         </div>
       </section>
 
       <section id="games" className="games">
         <div className="sectionTitle">
-          <div>
-            <small>DEMO MODE</small>
-            <h2>Featured Games</h2>
-          </div>
+          <small>GAME LOBBY</small>
+          <h2>Casino Classics</h2>
+          <p>DEMO MODE • VIRTUAL COINS</p>
         </div>
 
         <div className="gameGrid">
-          <div className="gameCard red">
-            <div className="gameIcon">⚔️</div>
-            <div>
-              <small>ACTION</small>
-              <h3>Battle Arena</h3>
-              <p>Demo Game</p>
-            </div>
-          </div>
+          {games.map(([icon, name, type]) => (
+            <div className="gameCard" key={name}>
+              <div className="gameIcon">{icon}</div>
 
-          <div className="gameCard blue">
-            <div className="gameIcon">🏎️</div>
-            <div>
-              <small>RACING</small>
-              <h3>Speed Racer</h3>
-              <p>Demo Game</p>
-            </div>
-          </div>
+              <div>
+                <small>{type}</small>
+                <h3>{name}</h3>
+                <p>Play Demo</p>
+              </div>
 
-          <div className="gameCard purple">
-            <div className="gameIcon">🧩</div>
-            <div>
-              <small>PUZZLE</small>
-              <h3>Puzzle Rush</h3>
-              <p>Demo Game</p>
+              <button>PLAY DEMO</button>
             </div>
-          </div>
-
-          <div className="gameCard green">
-            <div className="gameIcon">🎯</div>
-            <div>
-              <small>SKILL</small>
-              <h3>Target Master</h3>
-              <p>Demo Game</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       <footer>
         <h2>🎮 BalajiPlay</h2>
-        <p>Play • Compete • Have Fun</p>
-        <small>© 2026 BalajiPlay</small>
+        <p>Play • Spin • Have Fun</p>
+        <small>Demo Mode • Virtual Coins Only</small>
       </footer>
     </main>
   );
