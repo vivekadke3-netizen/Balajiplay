@@ -1,62 +1,47 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Login() {
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleLogin() {
+    if (!username || !password) {
+      alert("Username आणि Password टाका");
+      return;
+    }
+
+    router.push("/");
+  }
+
   return (
-    <main style={{
-      minHeight: "100vh",
-      background: "#080b12",
-      color: "white",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "20px"
-    }}>
-      <div style={{
-        width: "100%",
-        maxWidth: "400px",
-        background: "#111827",
-        padding: "30px",
-        borderRadius: "18px",
-        border: "1px solid #263248"
-      }}>
-        <h1 style={{ textAlign: "center" }}>🎮 BalajiPlay</h1>
-        <h2 style={{ textAlign: "center" }}>Login</h2>
+    <main className="loginPage">
+      <div className="loginCard">
+        <div className="loginLogo">🎮</div>
+
+        <h1>BalajiPlay</h1>
+        <p>Welcome back, Player</p>
 
         <input
           type="text"
           placeholder="Username"
-          style={{
-            width: "100%",
-            padding: "14px",
-            marginTop: "15px",
-            borderRadius: "10px",
-            border: "1px solid #334155"
-          }}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
           type="password"
           placeholder="Password"
-          style={{
-            width: "100%",
-            padding: "14px",
-            marginTop: "12px",
-            borderRadius: "10px",
-            border: "1px solid #334155"
-          }}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button style={{
-          width: "100%",
-          marginTop: "20px",
-          padding: "14px",
-          border: 0,
-          borderRadius: "10px",
-          background: "#22c55e",
-          color: "white",
-          fontWeight: "bold",
-          fontSize: "16px"
-        }}>
-          LOGIN
-        </button>
+        <button onClick={handleLogin}>LOGIN</button>
+
+        <a href="/">← Back to Home</a>
       </div>
     </main>
   );
